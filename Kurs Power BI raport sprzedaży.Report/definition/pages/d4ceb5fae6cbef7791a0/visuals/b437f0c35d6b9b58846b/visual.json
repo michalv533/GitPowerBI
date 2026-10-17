@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "b437f0c35d6b9b58846b",
+  "position": {
+    "x": 291.70068027210885,
+    "y": 29.387755102040817,
+    "z": 1000,
+    "height": 670.47619047619048,
+    "width": 365.71428571428572
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "date"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "date.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Średnia wartość zamówienia"
+                }
+              },
+              "queryRef": "_Miary.Średnia wartość zamówienia",
+              "nativeQueryRef": "Średnia wartość zamówienia"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customer"
+                    }
+                  },
+                  "Property": "Continent"
+                }
+              },
+              "queryRef": "customer.Continent",
+              "nativeQueryRef": "Continent"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "date"
+                  }
+                },
+                "Property": "Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

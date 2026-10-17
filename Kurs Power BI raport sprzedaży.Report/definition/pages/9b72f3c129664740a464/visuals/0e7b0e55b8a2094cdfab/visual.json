@@ -1,0 +1,44 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "0e7b0e55b8a2094cdfab",
+  "position": {
+    "x": 169.71388695045357,
+    "y": 77.711095603628749,
+    "z": 4000,
+    "height": 46.448011165387292,
+    "width": 524.32658757850663,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Sprzedaż",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": " w latach 2015 - 2023. Największy spadek zanotowaliśmy w kat. Computers.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#b3b3b3"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

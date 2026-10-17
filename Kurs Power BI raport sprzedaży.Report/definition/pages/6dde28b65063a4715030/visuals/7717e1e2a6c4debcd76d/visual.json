@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "7717e1e2a6c4debcd76d",
+  "position": {
+    "x": 484.3488220848177,
+    "y": 0,
+    "z": 2000,
+    "height": 341.40845070422534,
+    "width": 444.50704225352115,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customer"
+                    }
+                  },
+                  "Property": "CountryFull"
+                }
+              },
+              "queryRef": "customer.CountryFull",
+              "nativeQueryRef": "CountryFull"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "product"
+                        }
+                      },
+                      "Property": "ProductKey"
+                    }
+                  },
+                  "Function": 2
+                }
+              },
+              "queryRef": "Count(product.ProductKey)",
+              "nativeQueryRef": "Liczba elementów ProductKey"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "product"
+                      }
+                    },
+                    "Property": "ProductKey"
+                  }
+                },
+                "Function": 2
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

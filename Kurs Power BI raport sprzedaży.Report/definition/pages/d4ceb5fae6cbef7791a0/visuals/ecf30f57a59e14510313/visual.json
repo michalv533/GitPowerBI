@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ecf30f57a59e14510313",
+  "position": {
+    "x": 30.476190476190478,
+    "y": 29.387755102040817,
+    "z": 0,
+    "height": 125.17006802721089,
+    "width": 236.1904761904762
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "customer"
+                    }
+                  },
+                  "Property": "Continent"
+                }
+              },
+              "queryRef": "customer.Continent",
+              "nativeQueryRef": "Continent"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Sprzedaż miara"
+                }
+              },
+              "queryRef": "_Miary.Sprzedaż miara",
+              "nativeQueryRef": "Sprzedaż miara"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Miary"
+                  }
+                },
+                "Property": "Sprzedaż miara"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

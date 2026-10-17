@@ -1,0 +1,122 @@
+table product
+	lineageTag: e4ad75c5-9ef1-454e-b52e-d76bd409e730
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ce2bc92a-c339-48b5-b4f3-e1696a671f17
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c1e87ff-fb5a-433f-b147-8915050fc497
+		summarizeBy: none
+		sourceColumn: ProductCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: e97e3062-2506-4935-be2c-faf509bdab2d
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: 33ba2e73-8e42-4c3f-af65-50f862c8610a
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		dataType: string
+		lineageTag: c36d54fa-fabc-487f-88a7-7bbb93e9b422
+		summarizeBy: none
+		sourceColumn: Brand
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 06acbcf3-0cc9-439c-a4dd-30b7b97f8c91
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeightUnit
+		dataType: string
+		lineageTag: e128c101-26a1-4c9f-8ec0-920ed81475d1
+		summarizeBy: none
+		sourceColumn: WeightUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: 47561c8b-e5e0-40eb-a2f0-3b2b516aa0e4
+		summarizeBy: none
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 06ab8f87-1577-4fd2-9ed6-88bcefecb7cc
+		summarizeBy: none
+		sourceColumn: CategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryName
+		dataType: string
+		lineageTag: f4ec7d85-579f-4b28-bd6a-99a46d198e07
+		summarizeBy: none
+		sourceColumn: CategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3d42e1f1-b04a-43a3-af82-259f6f57af84
+		summarizeBy: none
+		sourceColumn: SubCategoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategoryName
+		dataType: string
+		lineageTag: 6fdc940d-1c45-4f87-bca7-aa0abf8e5a01
+		summarizeBy: none
+		sourceColumn: SubCategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition product = m
+		mode: import
+		source =
+				let
+				    Źródło = Csv.Document(File.Contents("C:\Users\micha\OneDrive\Moje_Kursy\5_PowerBI\Dane\product.csv"),[Delimiter=",", Columns=14, Encoding=1250, QuoteStyle=QuoteStyle.None]),
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(Źródło, [PromoteAllScalars=true]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"ProductKey", Int64.Type}, {"ProductCode", Int64.Type}, {"ProductName", type text}, {"Manufacturer", type text}, {"Brand", type text}, {"Color", type text}, {"WeightUnit", type text}, {"Weight", type text}, {"Cost", type text}, {"Price", type text}, {"CategoryKey", Int64.Type}, {"CategoryName", type text}, {"SubCategoryKey", Int64.Type}, {"SubCategoryName", type text}}),
+				    #"Zamieniono wartość" = Table.ReplaceValue(#"Zmieniono typ",".",",",Replacer.ReplaceText,{"Weight", "Cost", "Price"}),
+				    #"Zmieniono typ1" = Table.TransformColumnTypes(#"Zamieniono wartość",{{"Weight", type number}, {"Cost", type number}, {"Price", type number}}),
+				    #"Usunięto inne kolumny" = Table.SelectColumns(#"Zmieniono typ1",{"ProductKey", "ProductCode", "ProductName", "Manufacturer", "Brand", "Color", "WeightUnit", "Weight", "CategoryKey", "CategoryName", "SubCategoryKey", "SubCategoryName"})
+				in
+				    #"Usunięto inne kolumny"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

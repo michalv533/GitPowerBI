@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "11f2a2c58409d1fb117b",
+  "position": {
+    "x": 729.70078740157476,
+    "y": 77.606299212598429,
+    "z": 7000,
+    "height": 46.362204724409452,
+    "width": 243.90551181102362,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Największą sprzedaż zanotowaliśmy w ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "US",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#0c3762"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  },
+                  {
+                    "value": " Była ona 4x większa niż w",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  },
+                  {
+                    "value": "DE",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#468bcf"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

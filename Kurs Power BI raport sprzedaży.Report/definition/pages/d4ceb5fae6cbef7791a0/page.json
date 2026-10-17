@@ -1,0 +1,9 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "d4ceb5fae6cbef7791a0",
+  "displayName": "DAX",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "visibility": "HiddenInViewMode"
+}

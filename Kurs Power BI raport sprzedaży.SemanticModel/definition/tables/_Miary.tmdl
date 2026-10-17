@@ -1,0 +1,223 @@
+table _Miary
+	lineageTag: 5df83df4-f95b-46be-93a3-f2370508d68e
+
+	measure Sprzedaż =
+			
+			SUMX(
+			    sales,
+			    sales[Quantity] * sales[UnitPrice]
+			)
+		lineageTag: 9fe9669a-22f4-4692-95ad-5b5a57b6f80f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sprzedaż 2023' =
+			
+			CALCULATE(
+			    [Sprzedaż],
+			    'date'[Year] = 2023
+			)
+		lineageTag: f6a8f2d3-0e6a-4d84-bbd6-dad153e22d18
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sprzedaż 2022' =
+			
+			CALCULATE(
+			    [Sprzedaż],
+			    'date'[Year] = 2022
+			)
+		lineageTag: 8e2019db-a933-4af2-88b7-b6970fe0eac7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Różnica sprzedaży 2023 - 2022' =
+			
+			[Sprzedaż 2023] - [Sprzedaż 2022]
+		lineageTag: cec1b26e-660a-4d0f-9121-21a47839d49c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Marża =
+			
+			SUMX(
+			    sales,
+			    (sales[UnitPrice] - sales[UnitCost]) * sales[Quantity]
+			)
+		lineageTag: 75ff82ea-7c2a-4654-b3ea-e064851b18f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marża 2023' =
+			
+			CALCULATE(
+			    [Marża],
+			    'date'[Year] = 2023
+			)
+		lineageTag: 53e2425e-d4c9-4e02-a7e3-01452e5d0f0a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marża 2022' =
+			
+			CALCULATE(
+			    [Marża],
+			    'date'[Year] = 2022
+			)
+		lineageTag: 6a799314-4058-4c45-b5e6-f698ebf50593
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Różnica marży 2023 - 2022' =
+			
+			[Marża 2023] - [Marża 2022]
+		lineageTag: a143a3cf-83b5-436f-aef3-3073f0db0d29
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Marża procentowa' =
+			
+			DIVIDE([Marża], [Sprzedaż])
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 85b2d1a5-659f-425c-8be3-42c1fdaf7331
+
+	measure 'Marża % 2023' =
+			
+			CALCULATE(
+			    [Marża procentowa],
+			    'date'[Year] = 2023
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 08ab6e3f-618f-4395-950f-f01aeb1d66c4
+
+	measure 'Marża % 2022' =
+			
+			CALCULATE(
+			    [Marża procentowa],
+			    'date'[Year] = 2022
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 06b59ae8-ac5e-4037-be14-34431e7d6ac2
+
+	measure 'Różnica marży % 2023 - 2022' =
+			
+			[Marża % 2023] - [Marża % 2022]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 99231532-91c6-4e76-b88c-a717c0a62bff
+
+	measure 'CF Kolor różnicy marży' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Różnica marży 2023 - 2022] > 0, "#2ECC71",  -- zielony
+			    [Różnica marży 2023 - 2022] < 0, "#E74C3C",  -- czerwony
+			    BLANK()  -- brak koloru, jeśli równa 0 lub brak danych
+			)
+		lineageTag: f55ce784-c908-4176-aced-91e9a5faa3d3
+
+	measure '% różnica marży' =
+			
+			([Marża 2023] - [Marża 2022]) / [Marża 2022]
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8d269492-1af3-46ac-9fcb-c05a195b98ec
+
+	measure 'Liczba klientów' = COUNTROWS(VALUES(sales[CustomerKey]))
+		formatString: 0
+		lineageTag: 6821c165-c3ff-4836-b265-af01ea01015d
+
+	measure 'Nowi klienci 2023' = ```
+			
+			VAR Rok2023 =
+			    CALCULATETABLE (
+			        VALUES ( sales[CustomerKey] ),
+			        'date'[Year] = 2023
+			    )
+			VAR Rok2022 =
+			    CALCULATETABLE (
+			        VALUES ( sales[CustomerKey] ),
+			        'date'[Year] <= 2022
+			    )
+			RETURN
+			    COUNTROWS (
+			        EXCEPT ( Rok2023, Rok2022 )
+			    )
+			
+			```
+		formatString: 0
+		lineageTag: 21aeaaaa-b348-4828-8bd7-3ef1bb1837f1
+
+	measure 'Średnie zamówienie na klienta' = ```
+			
+			DIVIDE (
+			    [Sprzedaż],
+			    DISTINCTCOUNT ( sales[CustomerKey] )
+			)
+			
+			```
+		lineageTag: da400d3b-dc42-49db-b62f-d0f67d016cc8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sprzedaż miara' =
+			
+			SUMX(
+			    sales,
+			    sales[Quantity] * sales[UnitPrice])
+		lineageTag: 57a49f29-7c04-4c36-bc2a-ea34ef150464
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Średnia wartość zamówienia' = ```
+			
+			AVERAGEX(
+			    ADDCOLUMNS(
+			        SUMMARIZE(
+			        sales,
+			        sales[OrderKey]
+			        ),
+			    "Sprzedaż w zamówieniu",
+			    [Sprzedaż]
+			    ),
+			    [Sprzedaż w zamówieniu])
+			    
+			```
+		lineageTag: aa7bdab1-09b1-48eb-a8f9-3dddb7b71e94
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sprzedaż YTD' =
+			
+			TOTALYTD(
+			    [Sprzedaż],
+			    'date'[Date]
+			)
+		lineageTag: 2c7f8daa-3e45-499a-9c37-8f5a5fd69bca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Sprzedaż - 5 dni' =
+			
+			CALCULATE(
+			    [Sprzedaż],
+			    DATEADD(
+			        'date'[Date],
+			        -5,
+			        DAY
+			    )
+			)
+		lineageTag: 00fd2a69-4e3f-4de9-9213-f82b9677253b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _Miary = m
+		mode: import
+		source =
+				let
+				    Źródło = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Kolumna 1" = _t]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(Źródło,{{"Kolumna 1", type text}}),
+				    #"Usunięto kolumny" = Table.RemoveColumns(#"Zmieniono typ",{"Kolumna 1"})
+				in
+				    #"Usunięto kolumny"
+
+	annotation PBI_ResultType = Table
+

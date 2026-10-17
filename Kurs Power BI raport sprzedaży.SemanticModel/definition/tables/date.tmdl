@@ -1,0 +1,174 @@
+table date
+	lineageTag: 8c2e32f2-cd53-447a-928e-70518918e747
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: b2af950b-6f85-4505-83fa-b2fa1616cba8
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b6ca96ce-b243-42f7-9729-d3c550c80be7
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 86d9e99c-7a48-45f4-afb3-2fc01bad621f
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarter
+		dataType: string
+		lineageTag: a174a968-c1fc-4372-8ee0-649204a98923
+		summarizeBy: none
+		sourceColumn: YearQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarterNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 8138f59c-9ef9-45bf-ad90-ebc55da5fd2d
+		summarizeBy: none
+		sourceColumn: YearQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		dataType: string
+		lineageTag: c4a17f70-5116-441f-a63f-89b739522923
+		summarizeBy: none
+		sourceColumn: Quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3b0b68f2-bc27-478e-ba74-3dc83b29407d
+		summarizeBy: none
+		sourceColumn: YearMonth
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearMonthShort
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c152f85a-a4e3-4e05-89f2-6792ea6010a0
+		summarizeBy: none
+		sourceColumn: YearMonthShort
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearMonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 058da960-f20a-4e15-9bf8-1ee126f4f5c9
+		summarizeBy: none
+		sourceColumn: YearMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: a65b215f-3961-459b-a10d-3d2c9387bc00
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthShort
+		dataType: string
+		lineageTag: 3f627212-bee3-4aac-8d7b-05700ff98a8e
+		summarizeBy: none
+		sourceColumn: MonthShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 56e68170-23d5-488b-92b9-4d4a16d409e2
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayofWeek
+		dataType: string
+		lineageTag: 400bc99e-2104-4b0e-8e32-72c529ab3da2
+		summarizeBy: none
+		sourceColumn: DayofWeek
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayofWeekShort
+		dataType: string
+		lineageTag: 3dd1cbf9-f11b-492e-9da5-0ec16c050ae8
+		summarizeBy: none
+		sourceColumn: DayofWeekShort
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayofWeekNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c8461a6-e759-4790-81ef-13a0273a03f5
+		summarizeBy: none
+		sourceColumn: DayofWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkingDay
+		dataType: int64
+		formatString: 0
+		lineageTag: 2315b812-9065-40e1-91f7-ea82155e1efa
+		summarizeBy: none
+		sourceColumn: WorkingDay
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkingDayNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d913867-2255-4a82-ad42-eeea601c505f
+		summarizeBy: none
+		sourceColumn: WorkingDayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	partition date = m
+		mode: import
+		source =
+				let
+				    Źródło = Csv.Document(File.Contents("C:\Users\micha\OneDrive\Moje_Kursy\5_PowerBI\Dane\date.csv"),[Delimiter=";", Columns=17, Encoding=1250, QuoteStyle=QuoteStyle.None]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(Źródło,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}, {"Column8", type text}, {"Column9", type text}, {"Column10", type text}, {"Column11", type text}, {"Column12", type text}, {"Column13", type text}, {"Column14", type text}, {"Column15", type text}, {"Column16", type text}, {"Column17", type text}}),
+				    #"Usunięto pierwsze wiersze" = Table.Skip(#"Zmieniono typ",3),
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(#"Usunięto pierwsze wiersze", [PromoteAllScalars=true]),
+				    #"Zmieniono typ1" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"Date", type date}, {"DateKey", Int64.Type}, {"Year", Int64.Type}, {"YearQuarter", type text}, {"YearQuarterNumber", Int64.Type}, {"Quarter", type text}, {"YearMonth", type date}, {"YearMonthShort", type date}, {"YearMonthNumber", Int64.Type}, {"Month", type text}, {"MonthShort", type text}, {"MonthNumber", Int64.Type}, {"DayofWeek", type text}, {"DayofWeekShort", type text}, {"DayofWeekNumber", Int64.Type}, {"WorkingDay", Int64.Type}, {"WorkingDayNumber", Int64.Type}})
+				in
+				    #"Zmieniono typ1"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

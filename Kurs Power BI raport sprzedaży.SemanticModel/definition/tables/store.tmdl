@@ -1,0 +1,115 @@
+table store
+	lineageTag: 826950d3-d630-435c-856b-02f276e65c6e
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3013aeea-7258-45a1-be78-b0aa71f96b21
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreCode
+		dataType: int64
+		formatString: 0
+		lineageTag: cfef1ff8-391b-425c-9301-13a1f10ef832
+		summarizeBy: none
+		sourceColumn: StoreCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeoAreaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3b207115-4496-4ce8-8143-30f102a3e35b
+		summarizeBy: none
+		sourceColumn: GeoAreaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryCode
+		dataType: string
+		lineageTag: d1d9d218-cc6c-4e2d-b549-37cfa1b8ee75
+		summarizeBy: none
+		sourceColumn: CountryCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryName
+		dataType: string
+		lineageTag: 8e217ef9-cf91-41d2-8549-b86820fe2947
+		summarizeBy: none
+		sourceColumn: CountryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 647ce56e-daca-496a-a59d-eebb4908363b
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column OpenDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e41b9b6b-4d11-42bc-ba4e-9f6f4df3e906
+		summarizeBy: none
+		sourceColumn: OpenDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CloseDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 94e4728c-dc64-43ee-a45d-76ded59a87f0
+		summarizeBy: none
+		sourceColumn: CloseDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Description
+		dataType: string
+		lineageTag: 140460e6-18c4-4f69-bb33-409029941764
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column SquareMeters
+		dataType: int64
+		formatString: 0
+		lineageTag: 6de552f1-70a5-4a69-bab0-0b85e2c68052
+		summarizeBy: none
+		sourceColumn: SquareMeters
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: f29a2cd3-f12d-4364-aa13-dcf9fd320d0b
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition store = m
+		mode: import
+		source =
+				let
+				    Źródło = Csv.Document(File.Contents("C:\Users\micha\OneDrive\Moje_Kursy\5_PowerBI\Dane\store.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(Źródło, [PromoteAllScalars=true]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"StoreKey", Int64.Type}, {"StoreCode", Int64.Type}, {"GeoAreaKey", Int64.Type}, {"CountryCode", type text}, {"CountryName", type text}, {"State", type text}, {"OpenDate", type date}, {"CloseDate", type date}, {"Description", type text}, {"SquareMeters", Int64.Type}, {"Status", type text}})
+				in
+				    #"Zmieniono typ"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

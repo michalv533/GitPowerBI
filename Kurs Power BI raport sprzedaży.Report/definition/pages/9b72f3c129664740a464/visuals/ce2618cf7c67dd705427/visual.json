@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "ce2618cf7c67dd705427",
+  "position": {
+    "x": 729.58927074601843,
+    "y": 77.250628667225484,
+    "z": 7000,
+    "height": 46.13579212070411,
+    "width": 517.15004191114838,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Największy ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "spadek sprzedaży",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#e74c3c"
+                    }
+                  },
+                  {
+                    "value": " do roku 2022 zanotowaliśmy na produktach firm ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "Adventure Works i WWI.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#125392"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

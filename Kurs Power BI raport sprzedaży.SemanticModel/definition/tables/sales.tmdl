@@ -1,0 +1,125 @@
+table sales
+	lineageTag: 33e1e0cf-f266-4c85-9deb-d0d97f5a930a
+
+	column OrderKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1060d5bf-794f-467a-98dc-0b6f504bd2b9
+		summarizeBy: count
+		sourceColumn: OrderKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column LineNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 184c61c5-2bcf-4d2a-beab-5336c44c59de
+		summarizeBy: sum
+		sourceColumn: LineNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column OrderDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cd228f8c-ec60-4f14-a826-755d40b50ef3
+		summarizeBy: none
+		sourceColumn: OrderDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DeliveryDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 545b21db-9212-41d6-bda8-5630c38535f4
+		summarizeBy: none
+		sourceColumn: DeliveryDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: b7a9f319-ac26-43c7-881b-8be25b5d27e6
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ca29b3e4-0dd8-4fc8-ac9f-532b863219fe
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bb18eb4-9c9b-4ed4-9e4a-3c4ae660c4e9
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 4dbd51d5-e364-4c95-9cf8-c59407482f43
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitPrice
+		dataType: double
+		lineageTag: 593ad87f-139f-4e6a-afd0-79ca76c60289
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UnitCost
+		dataType: double
+		lineageTag: edf55108-5423-48f3-9738-1e6365d254a8
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Sprzedaż kolumna' =
+			
+			sales[Quantity] * sales[UnitPrice]
+		lineageTag: 4da04ad1-9653-4b51-8257-96f1fe2bd511
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition sales = m
+		mode: import
+		source =
+				let
+				    Źródło = Csv.Document(File.Contents("C:\Users\micha\OneDrive\Moje_Kursy\5_PowerBI\Dane\sales.csv"),[Delimiter=";", Columns=10, Encoding=1250, QuoteStyle=QuoteStyle.None]),
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(Źródło, [PromoteAllScalars=true]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"OrderKey", Int64.Type}, {"LineNumber", Int64.Type}, {"OrderDate", type date}, {"DeliveryDate", type date}, {"CustomerKey", Int64.Type}, {"StoreKey", Int64.Type}, {"ProductKey", Int64.Type}, {"Quantity", Int64.Type}, {"UnitPrice", type number}, {"UnitCost", type number}}),
+				    #"Usunięto błędy" = Table.RemoveRowsWithErrors(#"Zmieniono typ", {"UnitPrice", "UnitCost"}),
+				    #"Przefiltrowano wiersze" = Table.SelectRows(#"Usunięto błędy", each [UnitPrice] <> null and [UnitPrice] <> "")
+				in
+				    #"Przefiltrowano wiersze"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

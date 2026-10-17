@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "0070511f425ef6e9125f",
+  "position": {
+    "x": 729.51383694839194,
+    "y": 454.74943904263279,
+    "z": 17000,
+    "height": 49.783096484667169,
+    "width": 244.12864622288708,
+    "tabOrder": 17000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "M",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "arża %",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": "2",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  },
+                  {
+                    "value": "023 nie wykazuje znaczących różnic na kontynentach",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "95d738c7b9aac56e8a6d",
+  "position": {
+    "x": 10.140845070422536,
+    "y": 0,
+    "z": 0,
+    "height": 341.40845070422534,
+    "width": 444.50704225352115,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "product"
+                    }
+                  },
+                  "Property": "Brand"
+                }
+              },
+              "queryRef": "product.Brand",
+              "nativeQueryRef": "Brand"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "sales"
+                        }
+                      },
+                      "Property": "Quantity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(sales.Quantity)",
+              "nativeQueryRef": "Suma elementów Quantity"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

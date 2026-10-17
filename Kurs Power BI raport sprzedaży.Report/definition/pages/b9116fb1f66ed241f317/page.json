@@ -1,0 +1,63 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "b9116fb1f66ed241f317",
+  "displayName": "Duplikat sekcji Global",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 3,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "visualInteractions": [
+    {
+      "source": "8864c2c1648507607640",
+      "target": "a613f656235f073879ab",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8864c2c1648507607640",
+      "target": "6c7f4cd19e3556484893",
+      "type": "DataFilter"
+    },
+    {
+      "source": "8864c2c1648507607640",
+      "target": "cf5dc1a52cdb996a42f7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8864c2c1648507607640",
+      "target": "4e77560ae8249fbd4939",
+      "type": "NoFilter"
+    },
+    {
+      "source": "8864c2c1648507607640",
+      "target": "abaf3b91dae9d8f51793",
+      "type": "HighlightFilter"
+    }
+  ]
+}

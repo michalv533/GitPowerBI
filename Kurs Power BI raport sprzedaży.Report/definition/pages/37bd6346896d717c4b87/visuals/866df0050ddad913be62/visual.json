@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "866df0050ddad913be62",
+  "position": {
+    "x": 169.37284631288767,
+    "y": 454.30737422467269,
+    "z": 10000,
+    "height": 30.875258442453482,
+    "width": 396.9676085458305,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Marża w % w latach 2015 - 2023",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

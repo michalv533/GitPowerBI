@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "1a8f60f1d9e0e0b776e9",
+  "position": {
+    "x": 169.54876273653565,
+    "y": 77.3216885007278,
+    "z": 3000,
+    "height": 36.331877729257641,
+    "width": 524.48326055312953,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Liczba klientów",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": " była największa w roku ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": "2022",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#036415"
+                    }
+                  },
+                  {
+                    "value": ". Liczba ta spadła w roku ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#b3b3b3"
+                    }
+                  },
+                  {
+                    "value": "2023",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#a1343c"
+                    }
+                  },
+                  {
+                    "value": ".",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#b3b3b3"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

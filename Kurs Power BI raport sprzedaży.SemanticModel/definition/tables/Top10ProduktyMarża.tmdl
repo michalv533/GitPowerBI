@@ -1,0 +1,143 @@
+table Top10ProduktyMarża
+	lineageTag: 4ee475d9-7408-49df-b114-a09e72a0d332
+
+	column ProductKey
+		formatString: 0
+		lineageTag: 77c8f6b1-b407-4493-82ca-50da1169fc80
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: product[ProductKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCode
+		formatString: 0
+		lineageTag: 50709f95-b90d-4bdc-922a-412252387d17
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: product[ProductCode]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		lineageTag: f1c7428b-7ebc-432f-b3d4-58f8a16ae58b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[ProductName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		lineageTag: 6629f4e9-a430-473d-b32b-493db7ec0281
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[Manufacturer]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Brand
+		lineageTag: be65c88c-6cb7-4af0-9305-be157aaf400f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[Brand]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		lineageTag: af286505-4b9c-4faa-a09a-c2e5589a99b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[Color]
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeightUnit
+		lineageTag: 3fbf771f-c69d-4b43-92d4-237368c7509f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[WeightUnit]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		lineageTag: 4e24f797-615f-42b9-a1ff-b15a9ca1aa90
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: product[Weight]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CategoryKey
+		formatString: 0
+		lineageTag: 76b61135-35df-42ac-b93b-d5813d5d9003
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: product[CategoryKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CategoryName
+		lineageTag: f02043b0-4517-4413-8283-612b7a3cde5c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[CategoryName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategoryKey
+		formatString: 0
+		lineageTag: 505e5bfe-344d-4a72-abbb-deea7d8ab0a1
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: product[SubCategoryKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubCategoryName
+		lineageTag: 0634c182-1cd5-4dc2-887b-e7c71d95bc1e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: product[SubCategoryName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Marża 2023'
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: a67ba57b-56a4-4f79-a732-54811ce6a8d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Marża 2023]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sprzedaż 2023'
+		lineageTag: d7d7b020-4ff6-4dd5-8e66-dff8944a2f51
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sprzedaż 2023]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Top10ProduktyMarża = calculated
+		mode: import
+		source = ```
+				
+				TOPN (
+				    10,
+				    ADDCOLUMNS (
+				        product,
+				        "Marża 2023", [Marża % 2023],
+				        "Sprzedaż 2023", [Sprzedaż 2023]
+				    ),
+				    [Marża % 2023],
+				    DESC
+				)
+				
+				```
+
+	annotation PBI_Id = 22a98fad65684993b591f20ed46659c2
+

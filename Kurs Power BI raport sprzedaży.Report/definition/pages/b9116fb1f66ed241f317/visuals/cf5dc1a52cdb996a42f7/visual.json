@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "cf5dc1a52cdb996a42f7",
+  "position": {
+    "x": 1008.1077038145102,
+    "y": 197.21765145848917,
+    "z": 14000,
+    "height": 63.186237845923714,
+    "width": 244.12864622288708,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Najlepiej sprzedającą się kategorią produktów były ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "komputery",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#0c3762"
+                    }
+                  },
+                  {
+                    "value": ". Sprzedaż ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "telefonów",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#125392"
+                    }
+                  },
+                  {
+                    "value": " była 2x mniejsza.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "b9a71199bc862c017c94",
+  "displayName": "Tooltip continent",
+  "displayOption": "ActualSize",
+  "height": 240,
+  "width": 320,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "fc1b904516155ada276a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customer"
+              }
+            },
+            "Property": "Continent"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "9636502e6caa43ca9dcd",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "24b9007c0cebbce0ecae",
+        "boundFilter": "fc1b904516155ada276a",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "customer"
+              }
+            },
+            "Property": "Continent"
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

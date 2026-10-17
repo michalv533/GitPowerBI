@@ -1,0 +1,37 @@
+table Zamówienia
+	lineageTag: 328bcab1-8e7a-454c-91f6-b6e650a355c3
+
+	column OrderKey
+		formatString: 0
+		lineageTag: 0cdcf1fe-43b2-4cf3-9a65-e66d890388a3
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: sales[OrderKey]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sprzedaż w zamówieniu'
+		lineageTag: 4e67bbb4-76b5-4f51-8151-9e5159f8956c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sprzedaż w zamówieniu]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Zamówienia = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    SUMMARIZE(
+				    sales,
+				    sales[OrderKey]
+				),
+				"Sprzedaż w zamówieniu",
+				[Sprzedaż]
+				)
+
+	annotation PBI_Id = 758e201187184c28adeaf65336f5b99c
+

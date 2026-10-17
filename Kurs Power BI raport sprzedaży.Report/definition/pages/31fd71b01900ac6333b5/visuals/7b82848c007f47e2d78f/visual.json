@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "7b82848c007f47e2d78f",
+  "position": {
+    "x": 729.53367875647666,
+    "y": 401.71724648408588,
+    "z": 11000,
+    "height": 48.319763138415993,
+    "width": 308.8675055514434,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "M",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "arża w",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": " ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": "2",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  },
+                  {
+                    "value": "023 spadła o ponad 5,5 mln w NA w stosunku do roku 2022.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt",
+                      "color": "#808080"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

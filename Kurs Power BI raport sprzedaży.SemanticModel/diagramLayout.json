@@ -1,0 +1,136 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 825,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 757.38305001469371,
+            "y": 229.21117448996125
+          },
+          "nodeIndex": "customer",
+          "nodeLineageTag": "48d86788-05e2-4e12-9f04-862aa2d0897b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 360.38305001469382,
+            "y": 0
+          },
+          "nodeIndex": "date",
+          "nodeLineageTag": "8c2e32f2-cd53-447a-928e-70518918e747",
+          "size": {
+            "height": 214,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 375.38305001469382,
+            "y": 565
+          },
+          "nodeIndex": "product",
+          "nodeLineageTag": "e4ad75c5-9ef1-454e-b52e-d76bd409e730",
+          "size": {
+            "height": 218,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 366.20156119318534,
+            "y": 258
+          },
+          "nodeIndex": "sales",
+          "nodeLineageTag": "33e1e0cf-f266-4c85-9deb-d0d97f5a930a",
+          "size": {
+            "height": 244,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 205
+          },
+          "nodeIndex": "store",
+          "nodeLineageTag": "826950d3-d630-435c-856b-02f276e65c6e",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 1041.3830500146937,
+            "y": 339.5
+          },
+          "nodeIndex": "_Miary",
+          "nodeLineageTag": "5df83df4-f95b-46be-93a3-f2370508d68e",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1325.3830500146937,
+            "y": 291.5
+          },
+          "nodeIndex": "Top10ProduktyMarża",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1609.3830500146937,
+            "y": 291.5
+          },
+          "nodeIndex": "Bottom10ProduktyMarża",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1893.3830500146937,
+            "y": 291.5
+          },
+          "nodeIndex": "Zamówienia",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Wszystkie tabele",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Wszystkie tabele",
+  "defaultDiagram": "Wszystkie tabele"
+}

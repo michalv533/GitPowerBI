@@ -1,0 +1,250 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "4d3e12ec0f18db0e7b69",
+  "displayName": "Szczegóły",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ae8ce40100b9cbc8899e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Sprzedaż 2023"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "3e9cbbfee62264c9dcfb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Sprzedaż"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "24b72c44766048c70b47",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża 2023"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "4fe86ae0026572ddd306",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża procentowa"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "001b9ed18270fa1281ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "ef2a60c5954ea872393a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża % 2023"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "8d066a1e5b30fa9b5bdf",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża 2022"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "3ba4b997218c16946fb1",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "43a6dfaa83894a580144",
+        "boundFilter": "ae8ce40100b9cbc8899e",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Sprzedaż 2023"
+          }
+        }
+      },
+      {
+        "name": "b2de5c66219a10f87f9e",
+        "boundFilter": "3e9cbbfee62264c9dcfb",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Sprzedaż"
+          }
+        }
+      },
+      {
+        "name": "0922c31e3a726b55233d",
+        "boundFilter": "24b72c44766048c70b47",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża 2023"
+          }
+        }
+      },
+      {
+        "name": "ce5ffdb2096f26f223a5",
+        "boundFilter": "4fe86ae0026572ddd306",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża procentowa"
+          }
+        }
+      },
+      {
+        "name": "5d2cc785825cf8f710f4",
+        "boundFilter": "001b9ed18270fa1281ab",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża"
+          }
+        }
+      },
+      {
+        "name": "810ae636338046576d9d",
+        "boundFilter": "ef2a60c5954ea872393a",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża % 2023"
+          }
+        }
+      },
+      {
+        "name": "9a36eb488e385443d0ce",
+        "boundFilter": "8d066a1e5b30fa9b5bdf",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża 2022"
+          }
+        }
+      }
+    ]
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "ThemeDataColor": {
+                    "ColorId": 3,
+                    "Percent": 0
+                  }
+                }
+              }
+            }
+          },
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Drillthrough"
+}

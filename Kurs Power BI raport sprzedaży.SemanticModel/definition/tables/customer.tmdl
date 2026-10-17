@@ -1,0 +1,223 @@
+table customer
+	lineageTag: 48d86788-05e2-4e12-9f04-862aa2d0897b
+
+	column CustomerKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8f39621e-04a9-4a76-a3d2-d23b409ac023
+		summarizeBy: none
+		sourceColumn: CustomerKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeoAreaKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 13527e82-324f-4b5e-9cc7-9650c4d85cde
+		summarizeBy: none
+		sourceColumn: GeoAreaKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c5f61817-2efe-4b7c-8081-24e3fac9605b
+		summarizeBy: none
+		sourceColumn: StartDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndDT
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e944cc46-0eb4-45fe-b473-d79624978ff5
+		summarizeBy: none
+		sourceColumn: EndDT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Continent
+		dataType: string
+		lineageTag: 98e7b0bb-965c-4c93-b4e9-0a9138790e0e
+		summarizeBy: none
+		sourceColumn: Continent
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: c187afea-98fa-4f0d-9624-4f05074f5b86
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: f395d7d0-7e4c-4ad6-8b1d-6dc9eca15c28
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column GivenName
+		dataType: string
+		lineageTag: 8b65190f-ce37-4350-86a5-f04a7e5c0aad
+		summarizeBy: none
+		sourceColumn: GivenName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MiddleInitial
+		dataType: string
+		lineageTag: b5ee9d4a-3622-4349-9858-da64c9f4ba74
+		summarizeBy: none
+		sourceColumn: MiddleInitial
+
+		annotation SummarizationSetBy = Automatic
+
+	column Surname
+		dataType: string
+		lineageTag: 9b8f72ab-9225-437f-af07-e7c1fdea3a05
+		summarizeBy: none
+		sourceColumn: Surname
+
+		annotation SummarizationSetBy = Automatic
+
+	column StreetAddress
+		dataType: string
+		lineageTag: 1c0dafff-1ff2-4682-b349-71002621593e
+		summarizeBy: none
+		sourceColumn: StreetAddress
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: a92f048e-b85a-4d72-8e96-c215e9661ba2
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 3d4bbbb6-393f-4b00-af96-a7b1ebdadafc
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateFull
+		dataType: string
+		lineageTag: 0c563011-ff8e-4988-8557-cdad0039066d
+		summarizeBy: none
+		sourceColumn: StateFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZipCode
+		dataType: int64
+		formatString: 0
+		lineageTag: 417013f3-0b95-415d-858a-4aa10f9315e4
+		summarizeBy: none
+		sourceColumn: ZipCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 2950a34b-337f-4533-bf17-52fb07e64e67
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column CountryFull
+		dataType: string
+		lineageTag: bf8f8f85-23e5-44b9-9569-a7f02a3d5aab
+		summarizeBy: none
+		sourceColumn: CountryFull
+
+		annotation SummarizationSetBy = Automatic
+
+	column Birthday
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8578561c-67e2-4d59-be5e-4f0f50713252
+		summarizeBy: none
+		sourceColumn: Birthday
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: d2cbf68f-a461-423f-97ed-44317f80c94d
+		summarizeBy: none
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Occupation
+		dataType: string
+		lineageTag: 09e3d792-cb6f-4ef6-b1ed-31f2e440ca14
+		summarizeBy: none
+		sourceColumn: Occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column Company
+		dataType: string
+		lineageTag: bd4d574f-a7f4-488f-adaa-36cafb4c524a
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehicle
+		dataType: string
+		lineageTag: deb03eba-80e5-4349-b1b7-8d6c0738dcfc
+		summarizeBy: none
+		sourceColumn: Vehicle
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude
+		dataType: string
+		lineageTag: bd905729-130a-4942-ad48-a8a3cac06ae0
+		summarizeBy: none
+		sourceColumn: Latitude
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude
+		dataType: string
+		lineageTag: fbe45a5f-0cda-4e7f-a502-308623ac7360
+		summarizeBy: none
+		sourceColumn: Longitude
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customer = m
+		mode: import
+		source =
+				let
+				    Źródło = Csv.Document(File.Contents("C:\Users\micha\OneDrive\Moje_Kursy\5_PowerBI\Dane\customer.csv"),[Delimiter=";", Columns=24, Encoding=1250, QuoteStyle=QuoteStyle.None]),
+				    #"Nagłówki o podwyższonym poziomie" = Table.PromoteHeaders(Źródło, [PromoteAllScalars=true]),
+				    #"Zmieniono typ" = Table.TransformColumnTypes(#"Nagłówki o podwyższonym poziomie",{{"CustomerKey", Int64.Type}, {"GeoAreaKey", Int64.Type}, {"StartDT", type date}, {"EndDT", type date}, {"Continent", type text}, {"Gender", type text}, {"Title", type text}, {"GivenName", type text}, {"MiddleInitial", type text}, {"Surname", type text}, {"StreetAddress", type text}, {"City", type text}, {"State", type text}, {"StateFull", type text}, {"ZipCode", Int64.Type}, {"Country", type text}, {"CountryFull", type text}, {"Birthday", type date}, {"Age", Int64.Type}, {"Occupation", type text}, {"Company", type text}, {"Vehicle", type text}, {"Latitude", type text}, {"Longitude", type text}}),
+				    #"Zmieniono pierwszą literę każdego wyrazu na wielką" = Table.TransformColumns(#"Zmieniono typ",{{"Continent", Text.Proper, type text}})
+				in
+				    #"Zmieniono pierwszą literę każdego wyrazu na wielką"
+
+	annotation PBI_NavigationStepName = Nawigacja
+
+	annotation PBI_ResultType = Table
+

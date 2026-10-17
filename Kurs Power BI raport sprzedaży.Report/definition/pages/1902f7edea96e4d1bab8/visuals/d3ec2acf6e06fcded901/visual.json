@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "d3ec2acf6e06fcded901",
+  "position": {
+    "x": 166.75400291120815,
+    "y": 402.44541484716154,
+    "z": 9000,
+    "height": 46.579330422125182,
+    "width": 524.48326055312953,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "W roku 2023 pozyskaliśmy ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "6 tys. klientów",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": ". Ponad",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": " 3 tys.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  },
+                  {
+                    "value": " w samej ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "Ameryce Północnej.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

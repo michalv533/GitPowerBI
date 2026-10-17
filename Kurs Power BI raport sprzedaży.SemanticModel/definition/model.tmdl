@@ -1,0 +1,26 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["customer","date","product","sales","store","_Miary"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table customer
+ref table date
+ref table product
+ref table sales
+ref table store
+ref table _Miary
+ref table Top10ProduktyMarża
+ref table Bottom10ProduktyMarża
+ref table Zamówienia
+
+ref cultureInfo pl-PL
+

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3c911ff0aece01be0ce9",
+  "displayName": "Tooltip marża %",
+  "displayOption": "ActualSize",
+  "height": 240,
+  "width": 320,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "29e90d17aa4b15086863",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża procentowa"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "59b7324deb20840cd0a4",
+    "type": "Tooltip",
+    "parameters": [
+      {
+        "name": "ee6c274b80d0308c1617",
+        "boundFilter": "29e90d17aa4b15086863",
+        "fieldExpr": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Miary"
+              }
+            },
+            "Property": "Marża procentowa"
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode",
+  "type": "Tooltip"
+}

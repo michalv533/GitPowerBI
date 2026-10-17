@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "7f059fd41eb6dcfb516c",
+  "position": {
+    "x": 700.952380952381,
+    "y": 29.387755102040817,
+    "z": 2000,
+    "height": 670.47619047619048,
+    "width": 487.61904761904765
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "date"
+                    }
+                  },
+                  "Property": "YearMonth"
+                }
+              },
+              "queryRef": "date.YearMonth",
+              "nativeQueryRef": "YearMonth"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Sprzedaż"
+                }
+              },
+              "queryRef": "_Miary.Sprzedaż",
+              "nativeQueryRef": "Sprzedaż"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Sprzedaż YTD"
+                }
+              },
+              "queryRef": "_Miary.Sprzedaż YTD",
+              "nativeQueryRef": "Sprzedaż YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Miary"
+                    }
+                  },
+                  "Property": "Sprzedaż - 5 dni"
+                }
+              },
+              "queryRef": "_Miary.Sprzedaż - 5 dni",
+              "nativeQueryRef": "Sprzedaż - 5 dni"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

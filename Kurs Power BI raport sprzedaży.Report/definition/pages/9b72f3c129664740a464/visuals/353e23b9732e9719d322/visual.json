@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "353e23b9732e9719d322",
+  "position": {
+    "x": 729.43231441048033,
+    "y": 400.58224163027654,
+    "z": 10000,
+    "height": 30.742358078602617,
+    "width": 397.78748180494904,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "10 produktów z najgorszą marżą",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#a1343c"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

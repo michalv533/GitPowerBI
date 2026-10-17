@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
+  "name": "664fc2f28f7f821b9245",
+  "position": {
+    "x": 729.58927074601843,
+    "y": 77.250628667225484,
+    "z": 5000,
+    "height": 46.13579212070411,
+    "width": 517.15004191114838,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Od 2021 roku obserwujemy",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": " spadek",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#a1343c"
+                    }
+                  },
+                  {
+                    "value": " średniej sprzedaży na klienta w ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#808080"
+                    }
+                  },
+                  {
+                    "value": "Australii i Ameryce Północnej.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "color": "#186ec3"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

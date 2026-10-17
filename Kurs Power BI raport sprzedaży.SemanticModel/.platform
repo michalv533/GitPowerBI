@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Kurs Power BI raport sprzedaży"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b18fde47-7bf4-479d-bd63-e27d98a0eac9"
+  }
+}
